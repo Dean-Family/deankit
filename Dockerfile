@@ -4,7 +4,6 @@ ARG username="gdean"
 ARG shell="usr/bin/fish"
 ARG home="/home/${username}"
 
-ENV SHELL=${shell}
 RUN dnf install -y tar which python3 python3-pip\
     libselinux-python3 python-argcomplete\
     openldap-devel python3-devel python3-tox vim rsync tmux ShellCheck\
@@ -13,11 +12,12 @@ RUN dnf install -y tar which python3 python3-pip\
 
 RUN activate-global-python-argcomplete
 
-RUN useradd -u 1000 --create-home ${username} &&\
+RUN useradd -u 1000 --create-home ${username} --shell "${shell}" &&\
     echo "${username} ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/${username} &&\
     mkdir /cache
 
 USER ${username}
+ENV SHELL=${shell}
 WORKDIR ${home}
 
 RUN git clone https://github.com/Dean-Family/dotfiles.git
