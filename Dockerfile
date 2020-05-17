@@ -8,7 +8,7 @@ ENV SHELL=${shell}
 RUN dnf install -y tar which python3 python3-pip\
     libselinux-python3 python-argcomplete\
     openldap-devel python3-devel python3-tox vim rsync tmux ShellCheck\
-    lcov svn git nodejs nodejs-yarn net-tools sudo bash-completion fish zsh jq&&\
+    lcov svn git nodejs yarnpkg  net-tools sudo bash-completion fish zsh jq&&\
     dnf groupinstall "Development Tools" -y
 
 RUN activate-global-python-argcomplete
