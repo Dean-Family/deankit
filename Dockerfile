@@ -1,4 +1,4 @@
-FROM quay.io/fedora/fedora
+FROM quay.io/fedora/fedora:33-x86_64
 
 ARG username="gdean"
 ARG shell="usr/bin/fish"
