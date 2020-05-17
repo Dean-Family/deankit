@@ -7,3 +7,7 @@ RUN dnf install -y tar which python3 python3-pip\
     activate-global-python-argcomplete &&\
     mkdir /wheels && chmod 0777 /wheels
 
+COPY requirements.txt .
+RUN pip3 install -r requirements.txt
+
+
