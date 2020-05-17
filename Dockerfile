@@ -22,3 +22,4 @@ WORKDIR ${home}
 
 RUN git clone https://github.com/Dean-Family/dotfiles.git
 RUN ln -sfn dotfiles/.config .config
+RUN ln -sfn .config/vim/vimrc .vimrc
