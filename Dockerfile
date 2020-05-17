@@ -20,4 +20,5 @@ RUN useradd -u 1000 --create-home ${username} &&\
 USER ${username}
 WORKDIR ${home}
 
-RUN mkdir "${home}/.config"
+RUN git clone https://github.com/Dean-Family/dotfileo
+RUN ln -sfn dotfiles/.config .config
