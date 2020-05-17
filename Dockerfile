@@ -1,4 +1,4 @@
-FROM registry.fedoraproject.org/fedora:latest
+FROM quay.io/fedora/fedora:latest
 RUN dnf install -y tar which python3 python3-pip\
     libselinux-python3 python-argcomplete\
     openldap-devel python3-devel python3-tox vim rsync tmux ShellCheck\
