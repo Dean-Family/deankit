@@ -1,7 +1,7 @@
 FROM quay.io/fedora/fedora:33-x86_64
 
 ARG username="gdean"
-ARG shell="usr/bin/fish"
+ARG shell="/usr/bin/fish"
 ARG home="/home/${username}"
 
 RUN dnf install -y tar which python3 python3-pip\
